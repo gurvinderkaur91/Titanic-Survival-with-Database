@@ -13,7 +13,7 @@ data=load('data.joblib') #this is x
 # Database
 import psycopg2
 
-conn = psycopg2.connect(st.secrets["postgresql://titanic_db_od1t_user:sL2efOM6WMhc8fBrw4SDHcC7H5som2KH@dpg-d8olrvmrnols73d8fg6g-a.ohio-postgres.render.com/titanic_db_od1t"])
+conn = psycopg2.connect(st.secrets["DATABASE_URL"])
 cursor = conn.cursor()
 
 
