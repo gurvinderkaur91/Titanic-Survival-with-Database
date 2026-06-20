@@ -157,6 +157,7 @@ with pred_prob_col:
     if st.button("Predict"):
         result=model.predict(inputdf)
         prob=model.predict_proba(inputdf)
+        prediction=int(model.predict(inputdf)[0])
     
         if result[0]==1:
             st.success("Survived ✅ ")
@@ -210,7 +211,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s)
     age_category_db,
     fare_category_db,
     family_db,
-    result
+    prediction
 ))
 
 conn.commit()
